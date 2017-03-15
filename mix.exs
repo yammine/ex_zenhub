@@ -7,7 +7,10 @@ defmodule ExZenHub.Mixfile do
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps()]
+     test_coverage: [tool: ExCoveralls],
+     preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.html": :test],
+     deps: deps(),
+     package: package()]
   end
 
   # Configuration for the OTP application
@@ -36,5 +39,11 @@ defmodule ExZenHub.Mixfile do
       {:exvcr, "~> 0.7", only: :test},
       {:excoveralls, "~> 0.5", only: :test}
     ]
+  end
+
+  defp package do
+    [ maintainers: ["ChrisYammine"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/ChrisYammine/ex_zen_hub"} ]
   end
 end
