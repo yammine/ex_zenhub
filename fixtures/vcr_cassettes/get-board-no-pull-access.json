@@ -1,0 +1,33 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "X-Authentication-Token": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.zenhub.io/p1/repositories/12345/board?"
+    },
+    "response": {
+      "body": "{\"message\":\"No 'pull' access for this Repo, 6632996~12345-undefined:undefined\"}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Wed, 15 Mar 2017 21:42:11 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "79",
+        "Connection": "keep-alive",
+        "X-ZenHub-Request-Id": "a3ec269c-646c-4afd-80fa-737bd9833347",
+        "Vary": "Origin",
+        "X-RateLimit-Limit": "100",
+        "X-RateLimit-Used": "1",
+        "X-RateLimit-Reset": "1489614180",
+        "ETag": "W/\"4f-2660885122\"",
+        "Set-Cookie": "<REMOVED> HttpOnly"
+      },
+      "status_code": 404,
+      "type": "ok"
+    }
+  }
+]

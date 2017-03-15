@@ -4,5 +4,6 @@ defmodule ExZenHub.Boards do
   def get(repo_id, opts \\ []) do
     request(:get, "repositories/#{repo_id}/board", [], opts)
     |> ExZenHub.Parser.parse(:board)
+    |> decorate_response
   end
 end

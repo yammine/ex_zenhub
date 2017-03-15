@@ -9,7 +9,6 @@ defmodule ExZenHub.HTTP do
   def request({:error, _} = err, _, _, _, _), do: err
   def request({:ok, auth_token}, method, url, params, opts) do
     authorization_header = {"X-Authentication-Token", auth_token}
-    # probably some prep here
     case method do
       :get ->
         HTTPoison.get(url <> "?#{URI.encode_query(params)}", [authorization_header], opts)

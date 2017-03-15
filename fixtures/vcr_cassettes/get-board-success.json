@@ -1,0 +1,35 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "X-Authentication-Token": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.zenhub.io/p1/repositories/85001897/board?"
+    },
+    "response": {
+      "body": "{\"pipelines\":[{\"name\":\"New Issues\",\"issues\":[{\"issue_number\":6,\"is_epic\":true,\"position\":0},{\"issue_number\":7,\"is_epic\":true,\"position\":1}],\"id\":\"58c86b96b7c0bd424731823a\"},{\"name\":\"Icebox\",\"issues\":[],\"id\":\"58c86b96b7c0bd4247318239\"},{\"name\":\"Backlog\",\"issues\":[{\"issue_number\":1,\"is_epic\":false,\"estimate\":{\"value\":3},\"position\":0},{\"issue_number\":2,\"is_epic\":false,\"estimate\":{\"value\":3},\"position\":1},{\"issue_number\":4,\"is_epic\":false,\"estimate\":{\"value\":3},\"position\":2},{\"issue_number\":5,\"is_epic\":false,\"estimate\":{\"value\":3},\"position\":3}],\"id\":\"58c86b96b7c0bd4247318238\"},{\"name\":\"In Progress\",\"issues\":[],\"id\":\"58c86b96b7c0bd4247318237\"},{\"name\":\"Review/QA\",\"issues\":[],\"id\":\"58c86b96b7c0bd4247318236\"},{\"name\":\"Done\",\"issues\":[{\"issue_number\":3,\"is_epic\":false,\"estimate\":{\"value\":3},\"position\":0}],\"id\":\"58c86b96b7c0bd4247318235\"}]}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Wed, 15 Mar 2017 21:38:07 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "844",
+        "Connection": "keep-alive",
+        "X-ZenHub-Request-Id": "e0b848e9-be17-4c41-83fd-870ceeef1a7e",
+        "Vary": "Origin",
+        "X-RateLimit-Limit": "100",
+        "X-RateLimit-Used": "1",
+        "X-RateLimit-Reset": "1489613940",
+        "ETag": "W/\"34c-503840184\"",
+        "Set-Cookie": "<REMOVED> HttpOnly",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+        "X-Frame-Options": "DENY"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

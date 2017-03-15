@@ -1,0 +1,33 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "X-Authentication-Token": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.zenhub.io/p1/repositories/85001897/issues/35198412958461596?"
+    },
+    "response": {
+      "body": "{\"message\":\"Issue not found\"}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Wed, 15 Mar 2017 21:27:03 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "29",
+        "Connection": "keep-alive",
+        "X-ZenHub-Request-Id": "154f115b-2bdb-456a-bf81-78ca5f8aed6e",
+        "Vary": "Origin",
+        "X-RateLimit-Limit": "100",
+        "X-RateLimit-Used": "1",
+        "X-RateLimit-Reset": "1489613280",
+        "ETag": "W/\"1d-3105596397\"",
+        "Set-Cookie": "<REMOVED> HttpOnly"
+      },
+      "status_code": 404,
+      "type": "ok"
+    }
+  }
+]

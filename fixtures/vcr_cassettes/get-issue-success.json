@@ -1,0 +1,35 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "X-Authentication-Token": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.zenhub.io/p1/repositories/85001897/issues/3?"
+    },
+    "response": {
+      "body": "{\"estimate\":{\"value\":3},\"plus_ones\":[],\"pipeline\":{\"name\":\"Done\"},\"is_epic\":false}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Wed, 15 Mar 2017 21:14:51 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "82",
+        "Connection": "keep-alive",
+        "X-ZenHub-Request-Id": "fa58cccd-ab6a-4169-89aa-31cc43da2ed6",
+        "Vary": "Origin",
+        "X-RateLimit-Limit": "100",
+        "X-RateLimit-Used": "1",
+        "X-RateLimit-Reset": "1489612500",
+        "ETag": "W/\"52-735678127\"",
+        "Set-Cookie": "<REMOVED> HttpOnly",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains",
+        "X-Frame-Options": "DENY"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

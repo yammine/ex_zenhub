@@ -9,6 +9,9 @@ defmodule ExZenHub.API.Base do
     do_request(method, request_url(path), params, opts)
   end
 
+  def decorate_response({:error, _} = err), do: err
+  def decorate_response(response), do: {:ok, response}
+
   defp do_request(method, url, params, opts) do
     ExZenHub.Config.get
     |> verify_auth
@@ -32,7 +35,8 @@ defmodule ExZenHub.API.Base do
       %HTTPoison.Response{body: body, status_code: code} when code >= 200 and code < 300 ->
         Poison.decode(body, keys: :atoms)
       %HTTPoison.Response{body: body, status_code: code} ->
-        {:error, %ExZenHub.Error{code: code, message: body}}
+        decoded = body |> Poison.decode!
+        {:error, %ExZenHub.Error{code: code, message: decoded["message"]}}
     end
   end
 end
