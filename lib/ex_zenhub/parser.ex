@@ -41,9 +41,18 @@ defmodule ExZenHub.Parser do
     |> check_nested_resources
     |> (&(struct(ExZenHub.Pipeline, &1))).()
   end
-  def parse({:ok, body}, :issue) do
+  def parse({:ok, body}, :issue, extra_data \\ []) do
     body
     |> check_nested_resources
+    |> merge_extra_data(extra_data)
     |> (&(struct(ExZenHub.Issue, &1))).()
+  end
+
+
+  defp merge_extra_data(object, []), do: object
+  defp merge_extra_data(object, keyword) do
+    keyword
+    |> Enum.into(%{})
+    |> Map.merge(object)
   end
 end
