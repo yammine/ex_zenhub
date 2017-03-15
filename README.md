@@ -1,19 +1,26 @@
-# ExZenHub
+# ExZenHub [![Build Status](https://travis-ci.org/ChrisYammine/ex_zenhub.svg?branch=master)](https://travis-ci.org/ChrisYammine/ex_zenhub) [![Coverage Status](https://coveralls.io/repos/github/ChrisYammine/ex_zenhub/badge.svg?branch=master)](https://coveralls.io/github/ChrisYammine/ex_zenhub?branch=master)
 
-**TODO: Add description**
+A package to provide convenience accessing the ZenHub API in your Elixir application.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ex_zen_hub` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `ex_zenhub` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:ex_zen_hub, "~> 0.1.0"}]
+  [{:ex_zenhub, "~> 0.1"}]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/ex_zen_hub](https://hexdocs.pm/ex_zen_hub).
+## Documentation
+
+The docs can be found at [https://hexdocs.pm/ex_zenhub](https://hexdocs.pm/ex_zenhub).
+They're a little thin right now but I'll be fleshing them out soon.
+
+## Examples
+
+Coming soon
+
+## License
+MIT
 
