@@ -3,7 +3,7 @@ defmodule ExZenHub.Config do
   Infer whether we should use global or local auth settings
   """
   def current_scope do
-    if Process.get(:_ex_zen_hub_auth, nil), do: :process, else: :global
+    if Process.get(:_ex_zenhub_auth, nil), do: :process, else: :global
   end
 
   @doc """
@@ -11,17 +11,17 @@ defmodule ExZenHub.Config do
   """
   def get, do: get(current_scope())
   def get(:global) do
-    Application.get_env(:ex_zen_hub, :auth, nil)
+    Application.get_env(:ex_zenhub, :auth, nil)
   end
-  def get(:process), do: Process.get(:_ex_zen_hub_auth, nil)
+  def get(:process), do: Process.get(:_ex_zenhub_auth, nil)
 
   @doc """
   Set token value.
   """
   def set(value), do: set(current_scope(), value)
-  def set(:global, value), do: Application.put_env(:ex_zen_hub, :oauth, value)
+  def set(:global, value), do: Application.put_env(:ex_zenhub, :oauth, value)
   def set(:process, value) do
-    Process.put(:_ex_zen_hub_auth, value)
+    Process.put(:_ex_zenhub_auth, value)
     :ok
   end
 end
