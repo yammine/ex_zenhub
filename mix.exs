@@ -5,6 +5,7 @@ defmodule ExZenHub.Mixfile do
     [app: :ex_zen_hub,
      version: "0.1.0",
      elixir: "~> 1.4",
+     description: "Unofficial Elixir client for the ZenHub API",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      test_coverage: [tool: ExCoveralls],
