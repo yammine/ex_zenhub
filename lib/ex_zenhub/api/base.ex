@@ -1,8 +1,9 @@
 defmodule ExZenHub.API.Base do
   @moduledoc """
   Provides common functions for different ZenHub API resources
+  TODO: Add examples
+  TODO: Add async `stream_to` support
   """
-
   @spec request(:get | :post | :put | :patch | :delete, String.t, Keyword.t, Keyword.t) :: {:ok, Map.t | String.t} | {:error, any()}
   def request(method, path, params \\ [], opts \\ []) do
     do_request(method, request_url(path), params, opts)
