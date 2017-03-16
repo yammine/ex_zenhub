@@ -1,6 +1,6 @@
 # ExZenHub [![Build Status](https://travis-ci.org/ChrisYammine/ex_zenhub.svg?branch=master)](https://travis-ci.org/ChrisYammine/ex_zenhub) [![Coverage Status](https://coveralls.io/repos/github/ChrisYammine/ex_zenhub/badge.svg?branch=master)](https://coveralls.io/github/ChrisYammine/ex_zenhub?branch=master)
 
-A package to provide convenience accessing the ZenHub API in your Elixir application.
+A package to provide convenience accessing the [ZenHub](https://www.zenhub.com/) API in your Elixir application.
 
 ## Installation
 
