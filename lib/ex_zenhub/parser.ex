@@ -3,6 +3,7 @@ defmodule ExZenHub.Parser do
   Turn responses from ZenHub into structs
   """
   @nested_resources ~w(pipeline pipelines issues)a
+  alias ExZenHub.{Board, Pipeline, Issue, Event}
 
   @spec check_nested_resources(Map.t | any()) :: Map.t
   def check_nested_resources(object) when is_map(object) do
@@ -36,12 +37,16 @@ defmodule ExZenHub.Parser do
   def parse({:ok, body}, :board) do
     body
     |> check_nested_resources
-    |> (&(struct(ExZenHub.Board, &1))).()
+    |> (&(struct(Board, &1))).()
   end
   def parse({:ok, body}, :pipeline) do
     body
     |> check_nested_resources
-    |> (&(struct(ExZenHub.Pipeline, &1))).()
+    |> (&(struct(Pipeline, &1))).()
+  end
+  def parse({:ok, body}, :events) do
+    body
+    |> Enum.map(&Event.from_map/1)
   end
   def parse(tuple, atom, extra_data \\ [])
   def parse({:error, _} = err, _, _), do: err
@@ -49,9 +54,8 @@ defmodule ExZenHub.Parser do
     body
     |> check_nested_resources
     |> merge_extra_data(extra_data)
-    |> (&(struct(ExZenHub.Issue, &1))).()
+    |> (&(struct(Issue, &1))).()
   end
-
 
   @spec merge_extra_data(Map.t, Keyword.t) :: Map.t
   defp merge_extra_data(object, []), do: object

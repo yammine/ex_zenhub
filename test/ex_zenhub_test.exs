@@ -32,6 +32,24 @@ defmodule ExZenHubTest do
         assert match?(%ExZenHub.Error{code: 404, message: "Issue not found"}, error)
       end
     end
+
+    test "GET issue events - success" do
+      use_cassette "get-issue-events-success" do
+        {:ok, events} = ExZenHub.Issues.events(85001897, 3)
+        assert is_list(events)
+        assert match?([%ExZenHub.Event{}|_], events)
+      end
+    end
+
+    test "GET issue events - failure" do
+      use_cassette "get-issue-events-failure" do
+        # At the time of this test, fetching events for an issue that doesn't exist returns an empty list
+        # instead of the "Issue not found" error we see above when attempting to fetch issue data
+        {:ok, empty_list} = ExZenHub.Issues.events(85001897, 9999999999999)
+        assert is_list(empty_list)
+        assert empty_list == []
+      end
+    end
   end
 
   describe "Get board data" do
