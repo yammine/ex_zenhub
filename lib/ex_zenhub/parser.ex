@@ -3,7 +3,7 @@ defmodule ExZenHub.Parser do
   Turn responses from ZenHub into structs
   """
   @nested_resources ~w(pipeline pipelines issues epic_issues)a
-  alias ExZenHub.{Board, Pipeline, Issue, EpicIssue, Event}
+  alias ExZenHub.{Board, Pipeline, Issue, EpicIssue, Event, Epic}
 
   @spec check_nested_resources(Map.t | any()) :: Map.t
   def check_nested_resources(object) when is_map(object) do
@@ -57,7 +57,9 @@ defmodule ExZenHub.Parser do
     |> check_nested_resources # TODO: Maybe revisit how this is done
   end
   def parse({:ok, body}, :epic) do
-
+    body
+    |> check_nested_resources
+    |> (&(struct(Epic, &1))).()
   end
   def parse(tuple, atom, extra_data \\ [])
   def parse({:error, _} = err, _, _), do: err

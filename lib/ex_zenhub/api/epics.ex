@@ -9,5 +9,6 @@ defmodule ExZenHub.Epics do
   def get(repo_id, issue_number, opts \\ []) do
     request(:get, "repositories/#{repo_id}/epics/#{issue_number}", [], opts)
     |> ExZenHub.Parser.parse(:epic)
+    |> decorate_response
   end
 end
